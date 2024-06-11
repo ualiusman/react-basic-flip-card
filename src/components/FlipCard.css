@@ -12,13 +12,12 @@
     height: 100%;
     position: absolute;
     transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
     width: 100%;
 }
 
-.flipped {
-    transform: rotateY(180deg);
-}
+
+
 
 .card .front {
     backface-visibility: hidden;
@@ -30,5 +29,4 @@
 
 .card .back {
     text-align: center;
-    transform: rotateY(180deg);
 }

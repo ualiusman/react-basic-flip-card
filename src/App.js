@@ -12,6 +12,7 @@ function App() {
       <FlipCard
         cardFront={<Front />}
         cardBack={<Back />}
+        rotation='y'
       >
 
       </FlipCard>

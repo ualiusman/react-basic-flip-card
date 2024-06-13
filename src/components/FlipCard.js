@@ -6,8 +6,15 @@ function FlipCard({ cardFront, cardBack, rotation = 'x', flipEvent = 'onHover' }
     const [flipped, setFlipped] = useState(false);
 
 
-    const flip = () => {
-        setFlipped(!flipped);
+    const flipOnClicked = () => {
+        if (flipEvent.toLowerCase() === 'onclick')
+            setFlipped(!flipped);
+    }
+
+
+    const flipOnHover = () => {
+        if (flipEvent.toLowerCase() === 'onhover')
+            setFlipped(!flipped);
     }
 
     const getStyles = (rotation) => {
@@ -31,9 +38,9 @@ function FlipCard({ cardFront, cardBack, rotation = 'x', flipEvent = 'onHover' }
         <div className="card-container">
             <div style={getStyles(rotation)}
                 className={"card"}
-                onClick={() => flip()}
-                onMouseEnter={() => flip()}
-                onMouseLeave={() => flip()}
+                onClick={() => flipOnClicked()}
+                onMouseEnter={() => flipOnHover()}
+                onMouseLeave={() => flipOnHover()}
             >
                 <div className="front">
                     {cardFront}

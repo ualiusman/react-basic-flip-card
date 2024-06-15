@@ -1,21 +1,11 @@
-import FlipCard from './components/FlipCard'
+
 import './App.css';
+import GameBoard from './components/GameBoard';
 
 function App() {
   return (
     <div>
-      <FlipCard
-        cardFront={<Front />}
-        cardBack={<Back />}
-      >
-      </FlipCard>
-      <FlipCard
-        cardFront={<Front />}
-        cardBack={<Back />}
-        rotation='y'
-      >
-
-      </FlipCard>
+      <GameBoard />
     </div>
   );
 

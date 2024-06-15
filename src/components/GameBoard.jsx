@@ -1,6 +1,7 @@
 import react, { useState } from 'react'
 import GameOver from './GameOver';
 import Card from './Card';
+import "./game.css";
 
 const GameBoard = () => {
 
@@ -65,12 +66,32 @@ const GameBoard = () => {
     }
 
     const isGameOver = () => {
+        var isDone = true;
+        cardList.forEach(card => {
+            if (!card.matched)
+                isDone = false;
+        });
 
+        setGameOver(isDone);
     }
 
 
     const restartGame = () => {
 
+        setCardList(
+            shuffle(cards).map((name, index) => {
+                return {
+                    name: name,
+                    index: index,
+                    matched: false,
+                    flipped: false
+                }
+            })
+        );
+
+
+        setGameOver(false);
+        setFlippedCards([]);
     }
 
 

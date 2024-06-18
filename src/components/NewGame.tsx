@@ -5,7 +5,7 @@ const NewGame = () => {
 
     const navigate = useNavigate();
     const handleNewGameClick = () => {
-        navigate("/game");
+        navigate("game");
 
     }
 

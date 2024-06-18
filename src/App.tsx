@@ -1,10 +1,14 @@
+import GameBoard from "./components/GameBoard";
 import NewGame from "./components/NewGame";
-import { BrowserRouter, Route, } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      one and one
+      <Routes>
+        <Route path="/" element={<NewGame />} />
+        <Route path="/game" element={<GameBoard />} />
+      </Routes>
     </>
   );
 }
